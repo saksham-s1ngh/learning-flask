@@ -1,5 +1,4 @@
 # Flask basics course
----
 Following along and tracking it through this repo!
 Currently understood :
 1. Routing and decorators:
