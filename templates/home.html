@@ -8,24 +8,21 @@ Home - Paws Rescue Center
 <h1 id="title"><center>Paws Rescue Center 🐾</center></h1>
 <table>
     <tr>
-    {% for keys in pets_info[0] %} 
-        {% if keys == "id" %}
-        <th><strong>Image</strong></th> 
-        {% else %} 
-        <th><strong>{{keys | title}}</strong></th>
-        {% endif %}
-    {% endfor %}
+        <th>Image</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Bio</th>
     </tr>
-    {% for pet_dicts in pets_info %}
-        <tr>
-            {% for item_keys in pet_dicts %}
-                {% if item_keys == "id" %}
-                <td>{{(url_for('static',filename=pet_dicts[item_keys]))}}</td>
-                {% else %}
-                <td>{{pet_dicts[item_keys]}}</td>
-                {% endif %}
-            {% endfor %}
-        </tr> 
+    {% for pet in pets_info %} 
+    <tr>
+        <td><img src="{{url_for('static', filename= pet['id']|string+'.jpg')}}" height="100"></td>
+        <!-- Basically the above statement simply uses the 'id' key to get the image titles which are integers -->
+        <!--    and then converts them using the "| string" filter and attaches ".jpg" at the end to source it -->
+        <!--    correctly.-->
+        <td>{{ pet["name"] }}</td>
+        <td>{{ pet["age"] }}</td>
+        <td>{{ pet["bio"] }}</td>
+    </tr>
     {% endfor %}
 </table>
 {% endblock %}
