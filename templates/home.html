@@ -15,7 +15,11 @@ Home - Paws Rescue Center
     </tr>
     {% for pet in pets_info %} 
     <tr>
-        <td><img src="{{url_for('static', filename= pet['id']|string+'.jpg')}}" height="100"></td>
+        <td>
+            <a href="{{url_for('pet_details', pet_id = pet['id'])}}">
+            <img src="{{url_for('static', filename= pet["id"]|string+".jpg")}}" height="100">
+            </a>
+        </td>
         <!-- Basically the above statement simply uses the 'id' key to get the image titles which are integers -->
         <!--    and then converts them using the "| string" filter and attaches ".jpg" at the end to source it -->
         <!--    correctly.-->
