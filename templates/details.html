@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-{{pet["name"]}}'s Details - Paws Rescue Center
+{{pet["name"]}}'s Details
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
     <tr>
         <td>
             <div style="float:left; margin: 10px;">
-            <img src="{{ url_for('static', filename=pet["id"]|string+".jpg")}}" height="350">
+                <img src="{{ url_for('static', filename=pet["id"]|string+".jpg")}}" height="350">
             </div>
         </td>
         <td>

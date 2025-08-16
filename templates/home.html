@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-Home - Paws Rescue Center
+Home  
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@ Home - Paws Rescue Center
     <tr>
         <td>
             <a href="{{url_for('pet_details', pet_id = pet['id'])}}">
-            <img src="{{url_for('static', filename= pet["id"]|string+".jpg")}}" height="100">
+                <img src="{{url_for('static', filename= pet["id"]|string+".jpg")}}" height="100">
             </a>
         </td>
         <!-- Basically the above statement simply uses the 'id' key to get the image titles which are integers -->
